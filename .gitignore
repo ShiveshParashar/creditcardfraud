@@ -11,9 +11,6 @@ data/raw/*
 data/processed/*
 !data/processed/.gitkeep
 
-# trained artifacts
-models/*
-!models/.gitkeep
 
 # env / secrets
 .env
