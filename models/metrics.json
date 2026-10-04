@@ -1,0 +1,32 @@
+{
+  "baselines": {
+    "rule_based_pr_auc": 0.001492873038755881,
+    "logreg_pr_auc": 0.8462557452038604
+  },
+  "imbalance_comparison_cv_pr_auc": {
+    "class_weight": 0.7509411260820451,
+    "smote": 0.7552375354909753,
+    "undersample": 0.6368678618637963
+  },
+  "isolation_forest_val_pr_auc": 0.033818936387737496,
+  "autoencoder_val_pr_auc": 0.07606605092421638,
+  "autoencoder_backend": "sklearn",
+  "xgb_val_pr_auc": 0.8413649489916243,
+  "chosen_threshold": 0.5,
+  "test_summary": {
+    "pr_auc": 0.7663357832221539,
+    "recall_at_1pct_fpr": 0.8269230769230769,
+    "precision_at_100": 0.39,
+    "threshold": 0.5,
+    "precision": 0.78,
+    "recall": 0.75,
+    "f1": 0.7647058823529411,
+    "confusion_matrix": {
+      "tn": 42659,
+      "fp": 11,
+      "fn": 13,
+      "tp": 39
+    },
+    "total_cost": 2427.4
+  }
+}
