@@ -68,6 +68,12 @@ def get_artifacts():
 @app.get("/health")
 def health():
     return {"status": "ok"}
+@app.get("/")
+def root():
+    return {
+        "message": "Credit Card Fraud Detection API is running",
+        "status": "healthy"
+    }
 
 
 @app.post("/score", response_model=ScoreResponse)
