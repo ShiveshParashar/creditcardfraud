@@ -37,20 +37,19 @@ def load_artifacts():
 
 
 @st.cache_data
+@st.cache_data
 def load_stream_data():
-    raw = load_raw()
+    data_path = Path(__file__).resolve().parent.parent / "data" / "test_stream.csv"
+
+    if not data_path.exists():
+        raise FileNotFoundError(
+            f"Test stream dataset not found at {data_path}"
+        )
+
+    raw = pd.read_csv(data_path)
     df = build_features(raw)
-    _, _, test = time_based_split(df)
-    return test.reset_index(drop=True)
 
-
-try:
-    model, feat_cols, threshold, explainer = load_artifacts()
-except FileNotFoundError:
-    st.error("No trained model found. Run `python -m src.train` first.")
-    st.stop()
-
-test_df = load_stream_data()
+    return df.reset_index(drop=True)
 
 with st.sidebar:
     st.header("Controls")
