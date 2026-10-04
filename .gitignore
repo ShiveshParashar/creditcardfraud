@@ -1,0 +1,22 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+.ipynb_checkpoints/
+
+# data (large / sourced from Kaggle, not committed)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# trained artifacts
+models/*
+!models/.gitkeep
+
+# env / secrets
+.env
+
+# mlflow
+mlruns/
